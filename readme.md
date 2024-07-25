@@ -1,0 +1,9 @@
+npm i express
+npm i nodemon
+npm i bcrypt
+npm i dotenv
+npm i cors
+npm i cookie-parser
+npm i jsonwebtoken
+npm i mongoose
+npm i morgan
