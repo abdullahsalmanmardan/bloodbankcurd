@@ -5,7 +5,7 @@ require("dotenv").config();
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 
-// const userRouter = require("./routes/user-routes");
+const userRouter = require("./routes/authRoutes");
 const cors = require("cors");
 
 app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(morgan("dev"))
 
-app.use("/api", userRouter);
+app.use("/api/v1/auth", userRouter);
 
 const port = 8000;
 const start = async () => {
