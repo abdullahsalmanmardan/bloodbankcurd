@@ -7,7 +7,7 @@ const Register = () => {
     <div>
       <Form
         submitButton="Register"
-        fromTitle="Register Form"
+        formTitle="Register Form"
         error={error}
         formType={"register"}
       />

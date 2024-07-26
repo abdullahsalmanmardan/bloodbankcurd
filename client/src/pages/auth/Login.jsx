@@ -21,7 +21,7 @@ const Login = () => {
 
   return (
     <div>
-      <Form submitButton="Login" fromTitle="Login Form" error={error} formType={"login"} />
+      <Form submitButton="Login" formTitle={"Login Form"} error={error} formType={"login"} />
     </div>
   );
 };
