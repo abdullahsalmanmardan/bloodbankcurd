@@ -38,6 +38,7 @@ const registerController = async (req, res) => {
 const loginController = async (req, res) => {
   try {
     const user = await userModel.findOne({ email: req.body.email });
+    console.log("abdullah ", req.body.email);
     if (!user) {
       return res.status(404).send({
         success: false,

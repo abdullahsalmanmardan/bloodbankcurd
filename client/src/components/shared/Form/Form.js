@@ -3,10 +3,10 @@ import InputType from "./InputType";
 import { Link } from "react-router-dom";
 import { handleLogin, handleRegister } from "../../../services/authService";
 
-const Form = ({ formType, submitButton, formTitle, error }) => {
+const Form = ({ formType, submitButton, formTitle }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("donor");
+  const [role, setRole] = useState("donar");
   const [name, setName] = useState("");
   const [organizationName, setOrganizationName] = useState("");
   const [hospitalName, setHospitalName] = useState("");
@@ -19,7 +19,7 @@ const Form = ({ formType, submitButton, formTitle, error }) => {
       <div className="w-full max-w-md p-8 space-y-8 bg-white rounded shadow">
         <h2 className="text-2xl font-bold text-center">{formTitle}</h2>
         <hr />
-        {error && <p className="text-red-500">{error}</p>}
+        {/* {error && <p className="text-red-500">{error}</p>} */}
         <form
           className="space-y-6"
           onSubmit={(e) => {
@@ -46,7 +46,7 @@ const Form = ({ formType, submitButton, formTitle, error }) => {
               id="donarRadio"
               type="radio"
               name="role"
-              value={"donar"}
+              value="donar"
               onChange={(e) => setRole(e.target.value)}
               defaultChecked
               className="form-radio h-5 w-5 text-green-500 border-gray-300 focus:ring-0"
@@ -55,7 +55,7 @@ const Form = ({ formType, submitButton, formTitle, error }) => {
               htmlFor="donarRadio"
               className="ml-2 text-base pr-3 font-medium text-gray-800"
             >
-              Donar
+              Donor
             </label>
             <input
               id="adminRadio"

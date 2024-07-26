@@ -1,10 +1,16 @@
+import { userLogin } from "../redux/features/auth/authActions";
+import store from "../redux/store";
+
 export const handleLogin = (e, email, password, role) => {
   e.preventDefault();
   try {
     if (!email || !password) {
       alert("Please enter values for all the fields");
     }
-    console.log(email, password);
+    console.log(email, password,role);
+
+    // to access the reducer function without useDispatch because it is not jsx.
+    store.dispatch(userLogin({ email, password, role }));
   } catch (e) {
     console.log(e);
   }
