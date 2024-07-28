@@ -7,9 +7,6 @@ import axios from "axios";
 // const API = axios.create({ baseURL: process.env.REACT_APP_BASEURL });
 const API = axios.create({
   baseURL: "http://localhost:8001/api/v1",
-  headers: {
-    "Content-Type": "application/json", // Ensure this is correct
-  },
 });
 
 // before sending request to the server it will modify the header and add authorization to
@@ -17,9 +14,8 @@ const API = axios.create({
 API.interceptors.request.use((req) => {
   if (localStorage.getItem("token")) {
     req.headers["Authorization"] = `Bearer ${localStorage.getItem("token")}`;
-  } else {
-    return req;
   }
+  return req;
 });
 
 export default API;
