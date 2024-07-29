@@ -1,17 +1,25 @@
 import React, { useState } from "react";
 import Form from "../../components/shared/Form/Form";
+import { useSelector } from "react-redux";
+import Loader from "../../components/shared/Loader";
+import { toast } from "react-toastify";
 
 const Register = () => {
-  const [error, setError] = useState("");
+  const { loading, error } = useSelector((state) => state.auth);
+
   return (
-    <div>
-      <Form
-        submitButton="Register"
-        formTitle="Register Form"
-        error={error}
-        formType={"register"}
-      />
-    </div>
+    <>
+      {error && <div>{toast.error(error)}</div>}
+      {loading ? (
+        <Loader />
+      ) : (
+        <Form
+          submitButton="Register"
+          formTitle="Register Form"
+          formType={"register"}
+        />
+      )}
+    </>
   );
 };
 

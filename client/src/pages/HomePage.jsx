@@ -1,7 +1,16 @@
-import React from "react";
+import { useSelector } from "react-redux";
+import Loader from "../../components/shared/Loader";
+import { toast } from "react-toastify";
 
 const HomePage = () => {
-  return <div>HomePage</div>;
+  const { loading, error } = useSelector((state) => state.auth);
+
+  return (
+    <>
+      {error && <div>{toast.error(error)}</div>}
+      {loading ? <Loader /> : HomePage}
+    </>
+  );
 };
 
 export default HomePage;
