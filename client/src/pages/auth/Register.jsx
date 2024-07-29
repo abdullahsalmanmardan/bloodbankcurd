@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Form from "../../components/shared/Form/Form";
 import { useSelector } from "react-redux";
 import Loader from "../../components/shared/Loader";
